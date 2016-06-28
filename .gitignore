@@ -79,6 +79,8 @@ build/
 *.scc
 *.scss
 *.sass
+*.rb
+*.scssc
 
 # Visual C++ cache files
 ipch/
