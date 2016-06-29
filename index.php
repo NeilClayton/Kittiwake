@@ -1,31 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Kittiwake Cards</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="JS/bootstrap.min.js"></script>
-    <!-- Custom JS -->
-    <script src="https://use.fontawesome.com/71ebc9e44c.js"></script>
-    <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Jacques+Francois' rel='stylesheet' type='text/css'>
-</head>
-<body>
 <?php
-    include "includes/top-links.php";
-    include "includes/nav.php";
-?>
-    <div class="container-fluid">
-        <div class="row intro" style="height:1500px;">
-            
-        </div>
-    </div>
 
-</body>
-</html>
+include('app/init.php');
+$Template->set_data('page_class', 'home');
 
+
+if (isset($_GET['id']) && is_numeric($_GET['id']))
+{
+	#get products from a spesific category. 
+	
+	$category = $Categories->get_categories($_GET['id']);
+	
+	#create a name variable for the category
+	
+	#check validity of category ID
+	if ( ! empty($category))
+	{
+		#get category nav
+		$category_nav = $Categories->create_category_nav($category['name']);
+		$Template->set_data('page_nav', $category_nav);
+		
+		#get all product from that category
+		$cat_products = $Products->create_product_table(4, $_GET['id']);
+		
+		if ( ! empty($cat_products))
+		{
+			$Template->set_data('products', $cat_products);
+		}
+		else
+		{
+			$Template->set_data('products', '<li>No products exist in this category</li>');
+			
+		}
+		$Template->load('app/views/v_public_home.php', $category['name']);
+	}
+	else
+	{
+		#if categories isn't valid
+		$Template->redirect(SITE_PATH);
+	}
+	
+}
+else
+{
+	#get all products.
+	
+	#get category nav
+	$category_nav = $Categories->create_category_nav('home');
+	$Template->set_data('page_nav', $category_nav);
+
+	# get products
+	$products = $Products->create_product_table();
+	$Template->set_data('products', $products);
+
+	$Template->load('app/views/v_public_home.php', 'Welcome');
+
+}
