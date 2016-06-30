@@ -48,7 +48,6 @@ class User
 		
 	        if ($count_row == 1) 
 			{
-	            # this login var will use for the session thing
 	            $_SESSION['login'] = true; 
 	            $_SESSION['uid'] = $user_data['uid'];
 	            return true;

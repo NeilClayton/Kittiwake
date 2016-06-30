@@ -9,7 +9,7 @@ $Template->set_data('page_class', 'register');
         if ($register) 
 		{
            # Successful Registration
-		   $Template->set_alert(' Registration  successful . " <a href="login.php">Click here</a>" . to login');
+		   $Template->set_alert(' Registration  successful <a href="login.php">Click here</a>" to login');
         } 
 		else 
 		{

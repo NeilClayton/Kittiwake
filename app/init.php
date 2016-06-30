@@ -15,8 +15,8 @@ ini_set('display_errors', 1);
 
 #set up constants (things that will be used constantly)
 define('SITE_NAME', 'Kittiwake Cards');
-define('SITE_PATH', 'http://localhost:8080/Kittiwake_Cards/');
-define('IMAGE_PATH', 'http://localhost:8080/Kittiwake_Cards/resources/images/');
+define('SITE_PATH', 'http://localhost:8080/Kittiwake/');
+define('IMAGE_PATH', 'http://localhost:8080/Kittiwake/resources/images/');
 
 define('SHOP_TAX', 0.21);
 
