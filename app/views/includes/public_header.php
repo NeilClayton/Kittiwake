@@ -20,9 +20,20 @@
 					else
 					{
 						echo $items . ' items (&#163;' .$price. ') in cart';
-					}?> 
+					}?>
 				</strong> &nbsp;|&nbsp;
 				<a href="<?php echo SITE_PATH;?>cart.php">Shopping Cart</a>
+				<?php
+				if (isset($_SESSION['login']))
+				{
+					echo '<a href="login.php?q=logout">log out</a>';
+				}
+				else
+				{
+					echo '<a href="login.php">log in</a>';
+				}
+				?>
+				
 			</div>
 			
 			<h1><?php echo SITE_NAME; ?></h1>

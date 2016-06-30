@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 29, 2016 at 05:52 PM
+-- Generation Time: Jun 30, 2016 at 03:50 PM
 -- Server version: 5.5.20
 -- PHP Version: 5.3.9
 
@@ -69,6 +69,23 @@ INSERT INTO `tbl_products` (`id`, `category_id`, `name`, `description`, `price`,
 (5, 2, 'Portrait Christmas Card', 'Portrait Christmas Card description here.', 14.00, 'portrait_christmas_card.jpeg'),
 (6, 2, 'Blue Christmas Card', 'Blue Christmas Card description here', 20.00, 'blue_christmas_card.jpg'),
 (7, 2, 'Starry Night Christmas Card', 'Starry Night Christmas Card description here.', 40.00, 'stars_blue_christmas_card.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_users`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_users` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `uname` varchar(30) DEFAULT NULL,
+  `upass` varchar(50) DEFAULT NULL,
+  `fullname` varchar(100) DEFAULT NULL,
+  `uemail` varchar(70) DEFAULT NULL,
+  PRIMARY KEY (`uid`),
+  UNIQUE KEY `uname` (`uname`),
+  UNIQUE KEY `uemail` (`uemail`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
