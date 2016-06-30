@@ -18,13 +18,24 @@
 					<ul class="cart"><?php $this->get_data('cart_rows');?>
 					</ul>
 					<div class="buttons">
-						<button type="button" onclick="href='?empty'"><i class="fa fa-shopping-cart"></i>Empty Cart</button>
+						<a role="button" href="?empty" class="btn"><i class="fa fa-shopping-cart"></i>Empty Cart</a>
 						<button type="submit" name="update"><i class="fa fa-shopping-cart"></i>Update Cart</button>
 					</div>
 				</form>
+				<?php
+				if (!isset($_SESSION['login']))
+				{
+					echo '<a href="login.php"><i class="fa fa-shopping-cart"></i>Login and Checkout</a>';
+				}
+				else
+				{
+				?>
 				<form action="#" method="post" class="checkout">
-					<button type="submit" name="submit" class="button"><i class="fa fa-shopping-cart"></i>Checkout</button>
+					<button type="submit" name="submit" class="button"><i class="fa fa-shopping-cart"></i>Pay with PayPal</button>
 				</form>
+				<?php
+				}
+				?>
 			</div>
 		</div>
 	</div>

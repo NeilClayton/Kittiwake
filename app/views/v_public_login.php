@@ -15,15 +15,18 @@
 <body id="login">
 		<form action="#" method="post" name="login" autocomplete="off">
 			<h2>Sign in</h2>
+			<ul class="alerts">
+			<?php $this->get_alerts();?> 
+			</ul>
 			<div class="form-group">
 				<label for="email" class="sr-only">Email</label>
-				<input type="email" class="form-control" id="email" name="emailusername" placeholder="Enter your email" required autofocus>
+				<input class="form-control" id="email" name="emailusername" placeholder="Enter your username or email" required autofocus>
 			</div>
 			<div class="form-group">
 				<label for="password" class="sr-only">Password</label>
 				<input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
 			</div>
-			<button type="submit">Submit</button>
+			<button type="submit" name="submit">Submit</button>
 			<p>Not registered? <a href="register.php">Create an account</a></p>
 		</form>
 </body>

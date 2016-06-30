@@ -15,6 +15,9 @@
 <body id="login">
 	<form action="#" method="post" name="reg">
         <h2>Create an account</h2>
+		<ul class="alerts">
+		<?php $this->get_alerts();?> 
+		</ul>
         <div class="form-group">
             <label for="fullname" class="sr-only">Fullname:</label>
             <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your name" required autofocus>
@@ -29,13 +32,13 @@
         </div>
         <div class="form-group">
             <label for="password1" class="sr-only">Password:</label>
-            <input type="password" class="form-control" id="password1" name="upass1" placeholder="Enter a password" required>
+            <input type="password" class="form-control" id="password" name="upass" placeholder="Enter a password" required>
         </div>
-        <div class="form-group">
+       <!-- <div class="form-group">
             <label for="password2" class="sr-only">Confirm Password:</label>
             <input type="password" class="form-control" id="password2" name="upass2" placeholder="Confirm the password" required>
-        </div>
-        <button type="submit">Register</button>
+        </div>-->
+        <button type="submit" name="submit">Register</button>
         <p>Already have an account? <a href="login.php">Log in!</a></p>
     </form>
 
