@@ -16,12 +16,12 @@ if (isset($_GET['id']) && is_numeric($_GET['id']))
 	if (isset($_GET['num']) && is_numeric($_GET['num']))
 	{
 		$Cart->add($_GET['id'], $_GET['num']);
-		$Template->set_alert('The items have been successfuly added to the cart!');
+		$Template->set_alert('The items have been successfully added to the cart!');
 	}
 	else
 	{
 		$Cart->add($_GET['id']);
-		$Template->set_alert('The item have been successfuly added to the cart!');
+		$Template->set_alert('The item have been successfully added to the cart!');
 	}
 	$Template->redirect(SITE_PATH . 'cart.php');
 }
