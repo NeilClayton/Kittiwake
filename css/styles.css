@@ -1,0 +1,357 @@
+html {
+  background: url(../resources/images/back.jpg) center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.affix {
+  top: 0;
+  width: 100%;
+}
+
+.affix + .container-fluid {
+  padding-top: 50px;
+}
+
+.top-nav {
+  background: white;
+}
+.top-nav ul {
+  list-style-type: none;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.6rem;
+}
+.top-nav ul li {
+  display: inline-block;
+  padding: 10px;
+}
+.top-nav ul li input[type=search] {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+.top-nav a {
+  color: #333;
+}
+.top-nav header {
+  clear: both;
+  padding-bottom: 40px;
+}
+.top-nav header h2 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  font-size: 5rem;
+}
+
+.navbar {
+  margin: 0;
+}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.navbar-default {
+  border-radius: 0;
+  border: none;
+  background: white;
+  border-top: 1px solid #eeeeee;
+  -webkit-box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.75);
+}
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:active, .navbar-default .navbar-nav > li > a:visited, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #333;
+  padding: 17px 50px;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.8rem;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+  background: white;
+  color: #333;
+}
+.navbar-default .navbar-toggle, .navbar-default .navbar-toggle:hover {
+  border: none;
+  background: transparent;
+}
+.navbar-default .navbar-toggle .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar {
+  background: #333;
+}
+
+.dropdown-menu {
+  box-shadow: none;
+}
+
+.dropdown-menu > li > a {
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+}
+
+nav .fa {
+  margin-right: 10px;
+  font-size: 1.8rem;
+}
+
+.caret {
+  margin-left: 10px;
+}
+
+/* Product */
+.intro {
+  padding: 50px 0;
+  background: transparent;
+}
+.intro h1 {
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  font-size: 3.5rem;
+  text-align: center;
+  color: white;
+}
+.intro p {
+  margin-top: 25px;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  text-align: center;
+  color: white;
+}
+.intro button {
+  background: transparent;
+  border: 1px solid white;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  color: white;
+  padding: 10px 30px;
+  margin-top: 25px;
+  -moz-transition: background 0.5s linear 0s, color 0.5s linear 0s;
+  -webkit-transition: background 0.5s linear 0s, color 0.5s linear 0s;
+  -o-transition: background 0.5s linear 0s, color 0.5s linear 0s;
+  -ms-transition: background 0.5s linear 0s, color 0.5s linear 0s;
+  transition: background 0.5s linear 0s, color 0.5s linear 0s;
+}
+.intro button:hover {
+  background: white;
+  color: #333;
+}
+
+.products {
+  background: white;
+  padding: 30px 0;
+}
+.products h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  margin-left: 45px;
+}
+.products .product {
+  float: left;
+  width: 250px;
+  padding: 10px;
+  margin: 25px 35px 35px 0;
+}
+.products .product img {
+  background: white;
+  padding: 3px;
+  border: 1px solid #eeeeee;
+}
+.products .product p {
+  margin: 10px 0;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  text-align: center;
+}
+.products .product .add-cart {
+  width: 158px;
+  display: block;
+  margin: 0 auto;
+  background: #4ABDAC;
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  color: white;
+  text-align: center;
+}
+.products .product .add-cart:hover {
+  text-decoration: none;
+}
+
+.our-promise {
+  padding: 50px 0;
+  background: #f7f7f7;
+}
+.our-promise h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  margin: 0 0 50px 0;
+  color: #333;
+}
+.our-promise h3 {
+  margin: 0 0 20px 0;
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  color: #dd8609;
+}
+.our-promise p {
+  display: block;
+  margin: 10px auto 0 auto;
+  width: 75%;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+}
+
+.row-centered {
+  text-align: center;
+}
+
+.col-centered {
+  display: inline-block;
+  float: none;
+}
+
+.cards {
+  padding: 50px 0;
+  background: white;
+}
+.cards p {
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  text-align: center;
+}
+.cards p .fa {
+  margin: 0 7px;
+}
+
+/* Cart */
+.cart {
+  background: #f7f7f7;
+  padding: 50px 0;
+  overflow: hidden;
+}
+.cart h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+}
+.cart ul {
+  margin: 0;
+  padding: 0;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+}
+
+/* Login */
+#login {
+  background: #4ABDAC;
+  height: 100vh;
+}
+#login form {
+  width: 30%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  background: white;
+  padding: 60px;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+#login form h2 {
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#login form input {
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  border-radius: 0;
+  background: #f1f1f1;
+  height: 60px;
+  padding-left: 20px;
+}
+#login form button {
+  background: #4ABDAC;
+  border: none;
+  width: 100%;
+  border-radius: 0;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  height: 60px;
+  color: white;
+}
+#login form p {
+  display: block;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+#login form a {
+  color: #4ABDAC;
+}
+
+footer {
+  background: #4ABDAC;
+  padding: 30px 0;
+}
+footer ul {
+  list-style-type: none;
+}
+footer ul li a {
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  color: white;
+  padding: 0;
+}
+footer ul li a:hover {
+  color: white;
+}
+footer ul li .fa {
+  width: 20px;
+  margin-right: 5px;
+  color: white;
+}
+footer ul .cat {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
+}
+footer p {
+  margin-top: 30px;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  text-align: center;
+  color: white;
+}
+
+@media all and (max-width: 1024px) {
+  .navbar-default .navbar-nav > li > a {
+    padding: 25px 40px;
+  }
+
+  #login form {
+    width: 50%;
+  }
+}

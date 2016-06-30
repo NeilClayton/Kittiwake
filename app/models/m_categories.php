@@ -81,27 +81,45 @@ class Categories
 		$categories = $this->get_categories();
 		
 		# set up 'all' item
-		$data = '<li';
-		if ($active == strtolower('home'))
-		{
-			$data .= ' class ="active"';
-		}
-		$data .= '><a href="' . SITE_PATH . '">View All</a></li>';
-		
-		# loop through each category
-		if ( ! empty($categories))
-		{
-			foreach($categories as $category)
-			{
-				$data .= '<li';
-					if (strtolower($active) == strtolower($category['name']))
-					{
-						$data .= ' class ="active"';
-					}
-					$data .= '><a href="' . SITE_PATH . 'index.php?id=' . $category['id'] . '">' . $category['name'] . '</a></li>';
-			}
-		}
-		
-		return $data;
+		$data = '<nav class="navbar navbar-default navbar-static-top" data-spy="affix" data-offset-top="150">
+					<div class="container-fluid">
+					        <div class="navbar-header">
+            					<a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" role="button" aria-haspopup="true">
+                					<span class = "icon-bar"></span>
+                					<span class = "icon-bar"></span>
+                					<span class = "icon-bar"></span>
+            					</a>
+        					</div>
+        			<div class="collapse navbar-collapse" id="navbar">
+        				<ul class="nav navbar-nav">
+        					<li><a href="index.php">Home</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products&nbsp;<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li';
+								$data .= '><a href="' . SITE_PATH . '">View All</a></li>';
+
+
+								# loop through each category
+								if ( ! empty($categories))
+								{
+									foreach($categories as $category)
+									{
+										$data .= '<li';
+											if (strtolower($active) == strtolower($category['name']))
+											{
+												$data .= ' class ="active"';
+											}
+											$data .= '><a href="' . SITE_PATH . 'index.php?id=' . $category['id'] . '">' . $category['name'] . '</a></li>';
+									}
+									$data .= '</ul></li>
+									<li><a href="#">About</a></li>
+									<li><a href="#">Contact</a></li>
+						</ul>
+					</div>
+					</div>
+				</nav>';
+								}
+								return $data;
 	}
 }

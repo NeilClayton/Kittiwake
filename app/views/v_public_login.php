@@ -1,32 +1,30 @@
-<?php include("includes/public_header.php"); ?>
-
-<div id ="content">
-	<h2>Login</h2>
-	
-	<ul class="alerts">
-		<?php $this->get_alerts();?> 
-	</ul>
-	
-		<form action="" method="post" name="login">
-			<table>
-				<tr>
-					<th>Username or Email:</th>
-					<td><input type="text" name="emailusername" required></td>
-				</tr>
-				<tr>
-					<th>Password:</th>
-					<td><input type="password" name="password" required></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td><input type="submit" name="submit" value="Login"></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td><a href="register.php">Sign Up!</a></td>
-				</tr>	
-			</table>
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?php $this->get_data('page_title'); ?></title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="./JS/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/71ebc9e44c.js"></script>
+	<link href="./css/styles.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Jacques+Francois' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body id="login">
+		<form action="#" method="post" name="login" autocomplete="off">
+			<h2>Sign in</h2>
+			<div class="form-group">
+				<label for="email" class="sr-only">Email</label>
+				<input type="email" id="email" name="emailusername" placeholder="Enter your email" required autofocus>
+			</div>
+			<div class="form-group">
+				<label for="password" class="sr-only">Password</label>
+				<input type="password" id="password" name="password" placeholder="Enter your password" required>
+			</div>
+			<button type="submit">Submit</button>
+			<p>Not registered? <a href="register.php">Create an account</a></p>
 		</form>
-		
-</div>
-<?php include("includes/public_footer.php"); ?>
+</body>
+</html>

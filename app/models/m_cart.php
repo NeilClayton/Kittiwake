@@ -1,7 +1,7 @@
 <?php 
 
 #cart class to handle all tasks related to showing/modifying all items in cart
-#The cart automatically keeps trak of user selected items using adeveloped session variable.
+#The cart automatically keeps track of user selected items using a developed session variable.
 #the session variable will hold an array containing the id's and num of selected items. 
 
 
@@ -211,7 +211,7 @@ class Cart
 		$data = '';
 		$total = 0;
 		
-		$data .= '<li class="header_row"><div class="col1">Product Name:</div><div class="col2">Quantity:</div><div class="col3">Product Price:</div><div class="col4">Total Price:</div></li>';
+		$data .= '<div class="cart-1"><li class="header_row"><div class="col1">Product Name:</div><div class="col2">Quantity:</div><div class="col3">Product Price:</div><div class="col4">Total Price:</div></li>';
 		
 		
 		if ($products != '')
@@ -256,10 +256,10 @@ class Cart
 		else
 		{
 			#no products to display
-			$data .= '<li><strong>No items are in the cart!</strong></li>';
+			$data .= '<li><strong>No items are in the cart!</strong></li></div>';
 		
 			#add subtotal row
-			$data .= '<li class="subtotal_row"><div class="col1">Subtotal:</div><div class="col2">&#163;0.00</div></li>';
+			$data .= '<div class="cart2"><li class="subtotal_row"><div class="col1">Subtotal:</div><div class="col2">&#163;0.00</div></li>';
 		
 			#add shipping row
 			$data .= '<li class="shipping_row"><div class="col1">Shipping cost:</div><div class="col2">&#163;0.00 </div></li>';
@@ -267,7 +267,7 @@ class Cart
 			#add tax row
 			if (SHOP_TAX > 0)
 			{
-				$data .= '<li class="taxes_row"><div class="col1">VAT: (' .(SHOP_TAX * 100) . '%):</div><div class="col2">&#163;0.00</div></li>';
+				$data .= '<li class="taxes_row"><div class="col1">VAT: (' .(SHOP_TAX * 100) . '%):</div><div class="col2">&#163;0.00</div></li></div>';
 			}
 			
 			
