@@ -53,7 +53,7 @@ if (isset($_POST['update']))
 	#alert that everything was completed successfully
 	$Template->set_data('cart_total_items', $Cart->get_total_items());
 	$Template->set_data('cart_total_cost', $Cart->get_total_cost());
-	$Template->set_alert('Number of items in the cart updated.');
+	$Template->set_alert('<p>Number of items in the cart updated.</p>');
 
 }
 

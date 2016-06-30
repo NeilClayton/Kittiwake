@@ -37,7 +37,7 @@ body {
   box-shadow: none;
   outline: none;
 }
-.top-nav a {
+.top-nav .fa {
   color: #333;
 }
 .top-nav header {
@@ -180,12 +180,14 @@ nav .fa {
   width: 158px;
   display: block;
   margin: 0 auto;
+  color: white;
+  text-align: center;
   background: #4ABDAC;
   font-family: "Playfair Display", serif;
   font-size: 1.5rem;
-  padding: 10px 20px;
+  border: none;
   color: white;
-  text-align: center;
+  padding: 10px 20px;
 }
 .products .product .add-cart:hover {
   text-decoration: none;
@@ -243,15 +245,62 @@ nav .fa {
   padding: 50px 0;
   overflow: hidden;
 }
+.cart .buttons {
+  margin-top: 25px;
+}
 .cart h2 {
   font-family: "Playfair Display", serif;
   font-size: 2.8rem;
+  margin-bottom: 25px;
 }
-.cart ul {
-  margin: 0;
-  padding: 0;
+.cart p {
   font-family: "Jacques Francois", serif;
   font-size: 1.7rem;
+}
+.cart ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.8rem;
+}
+.cart ul li .tab-head {
+  display: inline-block;
+  width: 145px;
+  font-weight: normal;
+  font-family: "Playfair Display", serif;
+}
+.cart ul li .tab-detail {
+  margin-left: 15px;
+  font-weight: normal;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+}
+.cart ul li input {
+  box-shadow: none;
+  border: 1px solid #ddd;
+  width: 50px;
+}
+.cart ul .red {
+  color: red;
+}
+.cart .checkout {
+  margin-top: 13px;
+}
+.cart button {
+  width: 190px;
+  background: #4ABDAC;
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  border: none;
+  color: white;
+  margin: 0 10px 0 0;
+  padding: 15px 30px;
+}
+.cart button .fa {
+  margin-right: 7px;
+}
+.cart .button {
+  width: 393px;
 }
 
 /* Login */
@@ -288,7 +337,6 @@ nav .fa {
   border-radius: 0;
   background: #f1f1f1;
   height: 60px;
-  padding-left: 20px;
 }
 #login form button {
   background: #4ABDAC;

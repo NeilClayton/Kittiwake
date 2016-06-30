@@ -83,7 +83,7 @@ class Cart
 	
 	/**
 	*
-	*Update the quantity of a spesifc item
+	*Update the quantity of a specific item
 	*
 	*@access - public
 	*@param  - int, int
@@ -210,69 +210,59 @@ class Cart
 		
 		$data = '';
 		$total = 0;
-		
-		$data .= '<div class="cart-1"><li class="header_row"><div class="col1">Product Name:</div><div class="col2">Quantity:</div><div class="col3">Product Price:</div><div class="col4">Total Price:</div></li>';
-		
-		
+
 		if ($products != '')
 		{
 			#products to display
 			$line = 1;
-			$shipping = 0; 
-			
+			$shipping = 0;
+
 			foreach($products as $product)
 			{
-				#create a new item in the cart
-				$data .= '<li';
-				if ($line % 2 == 0)
-				{
-					$data .= ' class="alt"';
-				}
-				$data .= '><div class="col1">' . $product['name'] . '</div>';
-				$data .= '<div class="col2"><input name="product' . $product['id'] . '" value="' . $_SESSION['cart'][$product['id']] .'"></div>';
-				$data .= '<div class="col3">&#163;' . $product['price'] . '</div>';
-				$data .= '<div class="col4">&#163;' . $product['price'] * $_SESSION['cart'][$product['id']] . '</div></li>';
-				
+				$data .= '<li><b class="tab-head">Product Name:</b>' . "<b class='tab-detail'>"  . $product['name'] . '</b></li>';
+				$data .= '<li><b class="tab-head">Quantity:</b><b class="tab-detail"><input name="product' . $product['id'] . '" value="' . $_SESSION['cart'][$product['id']] .'"></b></li>';
+				$data .= '<li><b class="tab-head">Product Price:</b><b class="tab-detail">&#163;' . $product['price'] . '</b></li><br>';
+
 				$shipping += ($this->get_shipping_cost($product['price']) * $_SESSION['cart'][$product['id']]);
-				
+
 				$total += $product['price'] * $_SESSION['cart'][$product['id']];
 				$line++;
 			}
 			#add subtotal row
-			$data .= '<li class="subtotal_row"><div class="col1">Subtotal:</div><div class="col2">&#163;' . $total . ' </div></li>';
-		
+			$data .= '<li><b class="tab-head">Subtotal:</b><b class="tab-detail">&#163;' . $total . '</b></li>';
+
 			#add shipping row
-			$data .= '<li class="shipping_row"><div class="col1">Shipping cost:</div><div class="col2">&#163;' . number_format($shipping, 2) . ' </div></li>';
-		
+			$data .= '<li><b class="tab-head">Shipping cost:</b><b class="tab-detail">&#163;' . number_format($shipping, 2) . '</b></li>';
+
 			#add tax row
 			if (SHOP_TAX > 0)
 			{
-				$data .= '<li class="taxes_row"><div class="col1">VAT: (' .(SHOP_TAX * 100) . '%):</div><div class="col2">&#163;' . number_format(SHOP_TAX *  $total, 2) . '</div></li>';
+				$data .= '<li><b class="tab-head">VAT: (' .(SHOP_TAX * 100) . '%):</b><b class="tab-detail">&#163;' . number_format(SHOP_TAX *  $total, 2) . '</b></li>';
 			}
-		
+
 			#add total row
-			$data .= '<li class="total_row"><div class="col1">Total:</div><div class="col2">&#163;' . $total . ' </div></li>';
+			$data .= '<br><li><b class="tab-head">Total:</b><b class="tab-detail">&#163;' . $total . '</li></b>';
 		}
 		else
 		{
 			#no products to display
-			$data .= '<li><strong>No items are in the cart!</strong></li></div>';
+			$data .= '<li class="red">No items are in the cart!</li>';
 		
 			#add subtotal row
-			$data .= '<div class="cart2"><li class="subtotal_row"><div class="col1">Subtotal:</div><div class="col2">&#163;0.00</div></li>';
+			$data .= '<li><b class="tab-head">Subtotal:</b><b class="tab-detail">&#163;0.00</b></li>';
 		
 			#add shipping row
-			$data .= '<li class="shipping_row"><div class="col1">Shipping cost:</div><div class="col2">&#163;0.00 </div></li>';
+			$data .= '<li><b class="tab-head">Shipping cost:</b><b class="tab-detail">&#163;0.00</b></li>';
 			
 			#add tax row
 			if (SHOP_TAX > 0)
 			{
-				$data .= '<li class="taxes_row"><div class="col1">VAT: (' .(SHOP_TAX * 100) . '%):</div><div class="col2">&#163;0.00</div></li></div>';
+				$data .= '<li><b class="tab-head">VAT: (' .(SHOP_TAX * 100) . '%):</b><b class="tab-detail">&#163;0.00</b></li>';
 			}
 			
 			
 			#add total row
-			$data .= '<li class="total_row"><div class="col1">Total:</div><div class="col2">&#163;0.00</div></li>';
+			$data .= '<br><li><b class="tab-head">Total:</b<b class="tab-detail">&#163;0.00</b></li>';
 		}
 		
 		
