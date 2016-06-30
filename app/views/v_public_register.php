@@ -1,40 +1,43 @@
-<?php include("includes/public_header.php"); ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?php $this->get_data('page_title'); ?></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="./JS/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/71ebc9e44c.js"></script>
+    <link href="./css/styles.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Jacques+Francois' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body id="login">
+	<form action="#" method="post" name="reg">
+        <h2>Create an account</h2>
+        <div class="form-group">
+            <label for="fullname" class="sr-only">Fullname:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required autofocus>
+        </div>
+        <div class="form-group">
+            <label for="username" class="sr-only">Username:</label>
+            <input type="text" id="username" name="uname" placeholder="Enter a username" required>
+        </div>
+        <div class="form-group">
+            <label for="email" class="sr-only">Email Address:</label>
+            <input type="email" id="email" name="uemail" placeholder="Enter your email address" required>
+        </div>
+        <div class="form-group">
+            <label for="password1" class="sr-only">Password:</label>
+            <input type="password" id="password1" name="upass1" placeholder="Enter a password" required>
+        </div>
+        <div class="form-group">
+            <label for="password2" class="sr-only">Confirm Password:</label>
+            <input type="password" id="password2" name="upass2" placeholder="Confirm the password" required>
+        </div>
+        <button type="submit">Register</button>
+        <p>Already have an account? <a href="login.php">Log in!</a></p>
+    </form>
 
-<div id ="content">
-	<h2>Sign Up</h2>
-	
-	<ul class="alerts">
-		<?php $this->get_alerts();?> 
-	</ul>
-	
-	<form action="" method="post" name="reg">
-                <table>
-                    <tr>
-                        <th>Full Name:</th>
-                        <td><input type="text" name="fullname" required></td>
-                    </tr>
-                    <tr>
-                        <th>User Name:</th>
-                        <td><input type="text" name="uname" required></td>
-                    </tr>
-                    <tr>
-                        <th>Email:</th>
-                        <td><input type="text" name="uemail" required></td>
-                    </tr>
-                    <tr>
-                        <th>Password:</th>
-                        <td><input type="password" name="upass" required></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td><input type="submit" name="submit" value="Register"></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>You're already signed up! <a href="login.php">Click Here!</a></td>
-                    </tr> 
-                </table>
-            </form>
-		
-</div>
-<?php include("includes/public_footer.php"); ?>
+</body>
+</html>

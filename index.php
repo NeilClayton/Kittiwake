@@ -2,7 +2,7 @@
 
 include('app/init.php');
 $Template->set_data('page_class', 'home');
-	
+
 #When the user clicks the log out button
 if (isset($_GET['q']))
 {

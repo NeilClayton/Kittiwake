@@ -6,22 +6,22 @@ $Template->set_data('page_class', 'shoppingcart');
 if (isset($_GET['id']) && is_numeric($_GET['id']))
 {
 	#check vadility of item.
-	if( ! $Products->product_exists($_GET['id']))	
+	if( ! $Products->product_exists($_GET['id']))
 	{
 		$Template->set_alert('Sorry, the item you have selected is invalid');
 		$Template->redirect(SITE_PATH . 'cart.php');
 	}
-	
+
 	#adding the item to the cart
 	if (isset($_GET['num']) && is_numeric($_GET['num']))
 	{
 		$Cart->add($_GET['id'], $_GET['num']);
-		$Template->set_alert('The items have been successfuly added to the cart!');
+		$Template->set_alert('The items have been successfully added to the cart!');
 	}
 	else
 	{
 		$Cart->add($_GET['id']);
-		$Template->set_alert('The item have been successfuly added to the cart!');
+		$Template->set_alert('The item have been successfully added to the cart!');
 	}
 	$Template->redirect(SITE_PATH . 'cart.php');
 }
@@ -54,7 +54,7 @@ if (isset($_POST['update']))
 	$Template->set_data('cart_total_items', $Cart->get_total_items());
 	$Template->set_data('cart_total_cost', $Cart->get_total_cost());
 	$Template->set_alert('Number of items in the cart updated.');
-		
+
 }
 
 #get items in cart

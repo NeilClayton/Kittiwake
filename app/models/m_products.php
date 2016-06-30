@@ -87,7 +87,7 @@ class Products
 		else
 		{
 			# get a list of all products
-			if ($result = $this->Database->query("SELECT * FROM " . $this->db_table . " ORDER BY name ASC"))
+			if ($result = $this->Database->query("SELECT * FROM " . $this->db_table . " ORDER BY name ASC LIMIT 5"))
 			{
 				if ($result->num_rows > 0)
 				{
@@ -187,7 +187,7 @@ class Products
 	*/
 	public function product_exists($id)
 	{
-		if ($stmt = $this->Database->prepare("SELECT id FROM $this->db_table WHERE id = ?"))
+		if ($stmt = $this->Database->prepare("SELECT id FROM $this->db_table WHERE id = ?" ))
 		{
 			$stmt->bind_param('i', $id);
 			$stmt->execute();
@@ -234,16 +234,16 @@ class Products
 			$i = 1;
 			foreach ($products as $product)
 			{
-				$data .= '<li';
+				$data .= '<div class="product"';
 				if ($i == $cols) 
 				{
 					$data .= ' class="last"';
 					$i = 0;
 				}
 				$data .= '><a href="' . SITE_PATH . 'product.php?id=' . $product['id'] . '">';
-				$data .= '<img src="' . IMAGE_PATH . $product['image'] . '"alt="' . $product['name'] . '"><br>';
-				$data .= '<strong>' . $product['name'] . '</strong></a><br/>£ ' . $product['price'];
-				$data .= '<br><a class="button_sml" href="' . SITE_PATH . 'cart.php?id=' . $product['id'] . '">Add To Cart</a></li>';
+				$data .= '<img src="' . IMAGE_PATH . $product['image'] . '" alt="' . $product['name'] . '" class="img-responsive center-block" width="160" height="160">';
+				$data .= '<p>' . $product['name'] . '</a><br>£ ' .  $product['price'] . '</p>';
+				$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $product['id'] . '" role="button">Add To Cart</a></div>';
 				$i++;
 			}
 		}
