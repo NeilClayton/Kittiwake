@@ -15,8 +15,8 @@ ini_set('display_errors', 1);
 
 #set up constants (things that will be used constantly)
 define('SITE_NAME', 'Kittiwake Cards');
-define('SITE_PATH', 'http://localhost:8080/Kittiwake/');
-define('IMAGE_PATH', 'http://localhost:8080/Kittiwake/resources/images/');
+define('SITE_PATH', 'http://localhost:8080/Kittiwake_Cards/');
+define('IMAGE_PATH', 'http://localhost:8080/Kittiwake_Cards/resources/images/');
 
 define('SHOP_TAX', 0.21);
 
@@ -25,17 +25,18 @@ include('app/models/m_template.php');
 include('app/models/m_categories.php');
 include('app/models/m_products.php');
 include('app/models/m_cart.php');
+include('app/models/m_user.php');
 
 #Instatiating Objects
 $Template = new Template();
 $Categories = new Categories();
 $Products = new Products();
 $Cart = new Cart();
+$User = new User();
 
 session_start();
 
 #global 
 $Template->set_data('cart_total_items', $Cart->get_total_items());
 $Template->set_data('cart_total_cost', $Cart->get_total_cost());
-
 ?>
