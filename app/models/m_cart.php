@@ -246,7 +246,7 @@ class Cart
 		else
 		{
 			#no products to display
-			$data .= '<li class="red">No items are in the cart!</li>';
+			$data .= '<li class="red"><p class="text-warning">There are no items are in your basket.</p></li>';
 		
 			#add subtotal row
 			$data .= '<li><b class="tab-head">Subtotal:</b><b class="tab-detail">&#163;0.00</b></li>';
@@ -262,7 +262,7 @@ class Cart
 			
 			
 			#add total row
-			$data .= '<br><li><b class="tab-head">Total:</b<b class="tab-detail">&#163;0.00</b></li>';
+			$data .= '<br><li><b class="tab-head">Total:</b><b class="tab-detail">&#163;0.00</b></li>';
 		}
 		
 		

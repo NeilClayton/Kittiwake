@@ -9,7 +9,7 @@
 			<div class="col-md-10 col-md-offset-1">
 				<h1>Hand crafted greetings cards</h1>
 				<p>We make and sell greetings cards for a whole variety of occasions.</p>
-				<button type="button" class="center-block">View Products</button>
+				<a role="button" class="h-button" href="product.php">View Products</a>
 			</div>
 		</div>
 		<div class="row products">

@@ -127,7 +127,10 @@ nav .fa {
   text-align: center;
   color: white;
 }
-.intro button {
+.intro .h-button {
+  width: 180px;
+  display: block;
+  text-align: center;
   background: transparent;
   border: 1px solid white;
   -webkit-border-radius: 3px;
@@ -138,14 +141,14 @@ nav .fa {
   font-size: 1.7rem;
   color: white;
   padding: 10px 30px;
-  margin-top: 25px;
+  margin: 25px auto 0 auto;
   -moz-transition: background 0.5s linear 0s, color 0.5s linear 0s;
   -webkit-transition: background 0.5s linear 0s, color 0.5s linear 0s;
   -o-transition: background 0.5s linear 0s, color 0.5s linear 0s;
   -ms-transition: background 0.5s linear 0s, color 0.5s linear 0s;
   transition: background 0.5s linear 0s, color 0.5s linear 0s;
 }
-.intro button:hover {
+.intro .h-button:hover {
   background: white;
   color: #333;
 }
@@ -254,8 +257,8 @@ nav .fa {
   margin-bottom: 25px;
 }
 .cart p {
-  font-family: "Jacques Francois", serif;
-  font-size: 1.7rem;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 25px;
 }
 .cart ul {
   list-style-type: none;
@@ -286,7 +289,11 @@ nav .fa {
 .cart .checkout {
   margin-top: 13px;
 }
-.cart button {
+.cart .fa {
+  margin-right: 10px;
+}
+.cart button, .cart .a-button {
+  display: inline-block;
   width: 190px;
   background: #4ABDAC;
   font-family: "Playfair Display", serif;
@@ -296,11 +303,17 @@ nav .fa {
   margin: 0 10px 0 0;
   padding: 15px 30px;
 }
-.cart button .fa {
-  margin-right: 7px;
-}
 .cart .button {
+  display: block;
   width: 393px;
+  text-align: center;
+  background: #4ABDAC;
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  border: none;
+  color: white;
+  margin: 10px 0 0 0;
+  padding: 15px 30px;
 }
 
 /* Login */

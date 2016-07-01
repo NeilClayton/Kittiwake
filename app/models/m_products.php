@@ -87,7 +87,7 @@ class Products
 		else
 		{
 			# get a list of all products
-			if ($result = $this->Database->query("SELECT * FROM " . $this->db_table . " ORDER BY name ASC LIMIT 5"))
+			if ($result = $this->Database->query("SELECT * FROM " . $this->db_table . " ORDER BY name ASC"))
 			{
 				if ($result->num_rows > 0)
 				{
@@ -243,7 +243,7 @@ class Products
 				$data .= '><a href="' . SITE_PATH . 'product.php?id=' . $product['id'] . '">';
 				$data .= '<img src="' . IMAGE_PATH . $product['image'] . '" alt="' . $product['name'] . '" class="img-responsive center-block" width="160" height="160">';
 				$data .= '<p>' . $product['name'] . '</a><br>£ ' .  $product['price'] . '</p>';
-				$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $product['id'] . '" role="button">Add To Cart</a></div>';
+				$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $product['id'] . '" role="button">Add To Basket</a></div>';
 				$i++;
 			}
 		}
