@@ -97,7 +97,7 @@ class Categories
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products&nbsp;<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li';
-								$data .= '><a href="' . SITE_PATH . '">View All</a></li>';
+								$data .= '><a href="' . SITE_PATH . 'category.php' . '">View All</a></li>';
 
 
 								# loop through each category
@@ -110,7 +110,7 @@ class Categories
 											{
 												$data .= ' class ="active"';
 											}
-											$data .= '><a href="' . SITE_PATH . 'index.php?id=' . $category['id'] . '">' . $category['name'] . '</a></li>';
+											$data .= '><a href="' . SITE_PATH . 'category.php?id=' . $category['id'] . '">' . $category['name'] . '</a></li>';
 									}
 									$data .= '</ul></li>
 									<li><a href="about.php">About</a></li>
