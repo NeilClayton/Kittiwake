@@ -17,7 +17,6 @@
 				<h2>Just a few of our products</h2>
 				<?php $this->get_data('products');?>
 			</div>
-			<!--<a role="button" href="category.php">View More</a>-->
 		</div>
 		<div class="row our-promise row-centered">
 			<h2>Why choose us?</h2>
