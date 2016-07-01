@@ -10,42 +10,6 @@ if (isset($_GET['q']))
 	$Template->redirect(SITE_PATH . 'login.php');
 }
 
-if (isset($_GET['id']) && is_numeric($_GET['id']))
-{
-	#get products from a spesific category. 
-	
-	$category = $Categories->get_categories($_GET['id']);
-	
-	#create a name variable for the category
-	
-	#check validity of category ID
-	if ( ! empty($category))
-	{
-		#get category nav
-		$category_nav = $Categories->create_category_nav($category['name']);
-		$Template->set_data('page_nav', $category_nav);
-		
-		#get all product from that category
-		$cat_products = $Products->create_product_table(4, $_GET['id']);
-		
-		if ( ! empty($cat_products))
-		{
-			$Template->set_data('products', $cat_products);
-		}
-		else
-		{
-			$Template->set_data('products', '<li>No products exist in this category</li>');
-			
-		}
-		$Template->load('app/views/v_public_home.php', $category['name']);
-	}
-	else
-	{
-		#if categories isn't valid
-		$Template->redirect(SITE_PATH);
-	}
-	
-}
 else
 {
 	#get all products.
@@ -55,7 +19,7 @@ else
 	$Template->set_data('page_nav', $category_nav);
 
 	# get products
-	$products = $Products->create_product_table();
+	$products = $Products->create_five_product_table();
 	$Template->set_data('products', $products);
 
 	$Template->load('app/views/v_public_home.php', 'Welcome');

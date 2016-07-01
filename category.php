@@ -51,6 +51,6 @@ else
 	$products = $Products->create_product_table();
 	$Template->set_data('products', $products);
 
-	$Template->load('app/views/v_public_category.php');
+	$Template->load('app/views/v_public_category.php', 'View All');
 
 }
