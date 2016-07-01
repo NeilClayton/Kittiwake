@@ -19,7 +19,7 @@ else
 	$Template->set_data('page_nav', $category_nav);
 
 	# get products
-	$products = $Products->create_product_table();
+	$products = $Products->create_five_product_table();
 	$Template->set_data('products', $products);
 
 	$Template->load('app/views/v_public_home.php', 'Welcome');

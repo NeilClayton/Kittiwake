@@ -102,6 +102,23 @@ class Products
 		return $data;
 	}
 	
+	public function get_five($id = NULL)
+	{
+			# get a list of all products
+			if ($result = $this->Database->query("SELECT * FROM " . $this->db_table . " ORDER BY RAND() LIMIT 5"))
+			{
+				if ($result->num_rows > 0)
+				{
+					while ($row = $result->fetch_array())
+					{
+						$data[] = array('id'=> $row['id'], 'name'=> $row['name'], 'price'=> $row['price'], 'image'=> $row['image']);
+						
+					}
+				}
+			}
+		return $data;
+	}
+	
 	# obtaining products for spesific categories 
 	
 	/**
@@ -250,6 +267,33 @@ class Products
 		return $data;
 	}
 	
+	public function create_five_product_table($cols = 2, $category = NULL)
+	{
+
+		$products = $this->get_five();
+
+		$data = '';
+		#loop through each product
+		if (! empty($products))
+		{
+			$i = 1;
+			foreach ($products as $product)
+			{
+				$data .= '<div class="product"';
+				if ($i == $cols) 
+				{
+					$data .= ' class="last"';
+					$i = 0;
+				}
+				$data .= '><a href="' . SITE_PATH . 'product.php?id=' . $product['id'] . '">';
+				$data .= '<img src="' . IMAGE_PATH . $product['image'] . '" alt="' . $product['name'] . '" class="img-responsive center-block" width="160" height="160">';
+				$data .= '<p>' . $product['name'] . '</a><br>£ ' .  $product['price'] . '</p>';
+				$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $product['id'] . '" role="button">Add To Cart</a></div>';
+				$i++;
+			}
+		}
+		return $data;
+	}
 	
 	
 	
