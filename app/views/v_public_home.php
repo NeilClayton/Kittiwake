@@ -9,7 +9,7 @@
 			<div class="col-md-10 col-md-offset-1">
 				<h1>Hand crafted greetings cards</h1>
 				<p>We make and sell greetings cards for a whole variety of occasions.</p>
-				<a role="button" class="h-button" href="product.php">View Products</a>
+				<a role="button" class="h-button" href="category.php">View Products</a>
 			</div>
 		</div>
 		<div class="row products">
@@ -17,7 +17,7 @@
 				<h2>Just a few of our products</h2>
 				<?php $this->get_data('products');?>
 			</div>
-			<!--<a role="button" href="#">View More</a>-->
+			<!--<a role="button" href="category.php">View More</a>-->
 		</div>
 		<div class="row our-promise row-centered">
 			<h2>Why choose us?</h2>

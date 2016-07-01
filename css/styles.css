@@ -108,7 +108,7 @@ nav .fa {
   margin-left: 10px;
 }
 
-/* Product */
+/* Home */
 .intro {
   padding: 50px 0;
   background: transparent;
@@ -147,6 +147,9 @@ nav .fa {
   -o-transition: background 0.5s linear 0s, color 0.5s linear 0s;
   -ms-transition: background 0.5s linear 0s, color 0.5s linear 0s;
   transition: background 0.5s linear 0s, color 0.5s linear 0s;
+}
+.intro .h-button .fa {
+  margin-right: 10px;
 }
 .intro .h-button:hover {
   background: white;
@@ -187,7 +190,6 @@ nav .fa {
   text-align: center;
   background: #4ABDAC;
   font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -240,6 +242,114 @@ nav .fa {
 }
 .cards p .fa {
   margin: 0 7px;
+}
+
+/* Product */
+.l-product .card {
+  width: 290px;
+  height: 290px;
+  position: relative;
+  -webkit-perspective: 700px;
+  margin: 30px auto;
+}
+.l-product .card:hover .face {
+  -webkit-transition: all 0.75s ease-out;
+}
+.l-product .face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: visible;
+  -webkit-transition: all 1s ease-out;
+  -webkit-transform-origin: 0 0;
+}
+.l-product .front {
+  -webkit-transform: rotateY(-20deg);
+  z-index: 2;
+}
+.l-product .back {
+  -webkit-transform: rotateY(0deg);
+  z-index: 1;
+}
+.l-product .back p {
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  margin: 20px;
+}
+.l-product .back p input {
+  width: 180px;
+  border: 1px solid #ddd;
+}
+.l-product .back h3 {
+  margin-top: 70px;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  font-size: 1.8rem;
+}
+.l-product .back h3 input {
+  width: 250px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.l-product .back h4 {
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  margin: 70px 0 20px 20px;
+}
+.l-product .back h4 input {
+  width: 180px;
+  border: 1px solid #ddd;
+}
+.l-product .card:hover .front {
+  -webkit-transform: rotateY(-165deg);
+  -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+}
+.l-product .card:hover .back {
+  -webkit-transform: rotateY(-15deg);
+  -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+}
+.l-product img {
+  float: left;
+  border: 1px solid #ddd;
+}
+
+.details {
+  padding: 50px 0;
+  background: #f7f7f7;
+}
+.details h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  text-align: center;
+}
+.details p {
+  margin-top: 25px;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  text-align: center;
+}
+.details h5 {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  font-size: 2.25rem;
+}
+.details .a-button {
+  text-align: center;
+  display: block;
+  width: 250px;
+  background: #4ABDAC;
+  font-family: "Playfair Display", serif;
+  border: none;
+  color: white;
+  margin: 25px auto 0 auto;
+  padding: 15px 20px;
+  font-size: 1.8rem;
 }
 
 /* Cart */
@@ -297,11 +407,11 @@ nav .fa {
   width: 190px;
   background: #4ABDAC;
   font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
   border: none;
   color: white;
   margin: 0 10px 0 0;
   padding: 15px 30px;
+  font-size: 1.5rem;
 }
 .cart .button {
   display: block;
@@ -309,11 +419,50 @@ nav .fa {
   text-align: center;
   background: #4ABDAC;
   font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
   border: none;
   color: white;
   margin: 10px 0 0 0;
   padding: 15px 30px;
+}
+
+/* Contact */
+.contact {
+  background: white;
+  padding: 50px 0;
+}
+.contact form label {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin: 10px 0;
+}
+.contact form .form-control {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  background: #f1f1f1;
+  height: 40px;
+}
+.contact form button {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  padding: 10px 30px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+.contact form textarea {
+  resize: none;
+}
+.contact form .asterisk {
+  color: red;
+  margin-left: 7px;
 }
 
 /* Login */
