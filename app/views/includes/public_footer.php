@@ -34,7 +34,11 @@
 						</ul>
 					</div>
 					<div class="col-md-12">
-						<p>&copy; <?php echo date('Y') . ' ' . SITE_NAME; ?></p>
+						<p>&copy; <?php 
+						
+						date_default_timezone_set("Europe/London");
+						
+						echo date('Y') . ' ' . SITE_NAME; ?></p>
 					</div>
 				</div>
 			</div>

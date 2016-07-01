@@ -7,4 +7,4 @@ $Template->set_data('page_class', 'about');
 	$category_nav = $Categories->create_category_nav('home');
 	$Template->set_data('page_nav', $category_nav);
 
-	$Template->load('app/views/v_public_contact.php', 'Welcome');
+	$Template->load('app/views/v_public_contact.php', 'Contact Us');
