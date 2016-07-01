@@ -113,8 +113,8 @@ class Categories
 											$data .= '><a href="' . SITE_PATH . 'index.php?id=' . $category['id'] . '">' . $category['name'] . '</a></li>';
 									}
 									$data .= '</ul></li>
-									<li><a href="#">About</a></li>
-									<li><a href="#">Contact</a></li>
+									<li><a href="about.php">About</a></li>
+									<li><a href="contact.php">Contact</a></li>
 						</ul>
 					</div>
 					</div>
