@@ -34,10 +34,10 @@
             <label for="password1" class="sr-only">Password:</label>
             <input type="password" class="form-control" id="password" name="upass" placeholder="Enter a password" required>
         </div>
-       <!-- <div class="form-group">
+       <div class="form-group">
             <label for="password2" class="sr-only">Confirm Password:</label>
             <input type="password" class="form-control" id="password2" name="upass2" placeholder="Confirm the password" required>
-        </div>-->
+        </div>
         <button type="submit" name="submit">Register</button>
         <p>Already have an account? <a href="login.php">Log in!</a></p>
     </form>

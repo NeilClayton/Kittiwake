@@ -352,6 +352,29 @@ nav .fa {
   font-size: 1.8rem;
 }
 
+/* About */
+.about-content {
+  padding: 50px 0;
+  background: #f7f7f7;
+}
+.about-content .about-us {
+  margin: 0 0 0 2.5%;
+  width: 95%;
+  background: white;
+  padding: 50px;
+}
+.about-content .about-us h2 {
+  margin-top: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  text-align: center;
+}
+.about-content .about-us p {
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  text-align: justify;
+}
+
 /* Cart */
 .cart {
   background: #f7f7f7;
@@ -435,6 +458,9 @@ nav .fa {
   font-size: 2rem;
   margin: 10px 0;
 }
+.contact form input {
+  height: 40px;
+}
 .contact form .form-control {
   border: none;
   box-shadow: none;
@@ -446,7 +472,6 @@ nav .fa {
   -ms-border-radius: 0;
   border-radius: 0;
   background: #f1f1f1;
-  height: 40px;
 }
 .contact form button {
   font-family: "Playfair Display", serif;
