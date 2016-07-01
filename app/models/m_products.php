@@ -119,11 +119,11 @@ class Products
 		return $data;
 	}
 	
-	# obtaining products for spesific categories 
+	# obtaining products for specific categories
 	
 	/**
 	*
-	*retrive product data from database from all products in a spesified category. 
+	*retrieve product data from database from all products in a spesified category. 
 	*
 	*@access - public
 	*@param  - int 
