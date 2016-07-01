@@ -8,7 +8,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id']))
 	#check vadility of item.
 	if( ! $Products->product_exists($_GET['id']))
 	{
-		$Template->set_alert('Sorry, the item you have selected is invalid');
+		$Template->set_alert('<p class="text-danger">Sorry, the item you have selected is invalid.</p>');
 		$Template->redirect(SITE_PATH . 'cart.php');
 	}
 
@@ -16,12 +16,12 @@ if (isset($_GET['id']) && is_numeric($_GET['id']))
 	if (isset($_GET['num']) && is_numeric($_GET['num']))
 	{
 		$Cart->add($_GET['id'], $_GET['num']);
-		$Template->set_alert('The items have been successfully added to the cart!');
+		$Template->set_alert('<p class="text-success">The items have been successfully added to your basket!</p>');
 	}
 	else
 	{
 		$Cart->add($_GET['id']);
-		$Template->set_alert('The item have been successfully added to the cart!');
+		$Template->set_alert('<p class="text-success">This item has been successfully added to your basket!</p>');
 	}
 	$Template->redirect(SITE_PATH . 'cart.php');
 }
@@ -31,7 +31,7 @@ if (isset($_GET['empty']))
 	$Cart->empty_cart();
 	$Template->set_data('cart_total_items', 0);
 	$Template->set_data('cart_total_cost', 0.00);
-	$Template->set_alert('The shopping cart is now empty!');
+	$Template->set_alert('<p class="text-info">Your basket is now empty.</p>');
 	$Template->redirect(SITE_PATH . 'cart.php');
 }
 
@@ -53,7 +53,7 @@ if (isset($_POST['update']))
 	#alert that everything was completed successfully
 	$Template->set_data('cart_total_items', $Cart->get_total_items());
 	$Template->set_data('cart_total_cost', $Cart->get_total_cost());
-	$Template->set_alert('<p>Number of items in the cart updated.</p>');
+	$Template->set_alert('<p class="text-info">The number of items in the cart have been updated.</p>');
 
 }
 

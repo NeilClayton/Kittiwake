@@ -18,14 +18,14 @@
 					<ul class="cart"><?php $this->get_data('cart_rows');?>
 					</ul>
 					<div class="buttons">
-						<a role="button" href="?empty" class="btn"><i class="fa fa-shopping-cart"></i>Empty Cart</a>
+						<a role="button" class="a-button" href="?empty"><i class="fa fa-shopping-cart"></i>Empty Cart</a>
 						<button type="submit" name="update"><i class="fa fa-shopping-cart"></i>Update Cart</button>
 					</div>
 				</form>
 				<?php
 				if (!isset($_SESSION['login']))
 				{
-					echo '<a href="login.php"><i class="fa fa-shopping-cart"></i>Login and Checkout</a>';
+					echo '<a role="button" class="button" href="login.php"><i class="fa fa-shopping-cart"></i>Login and Checkout</a>';
 				}
 				else
 				{
