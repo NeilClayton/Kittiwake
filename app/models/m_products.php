@@ -258,9 +258,9 @@ class Products
 					$i = 0;
 				}
 				$data .= '><a href="' . SITE_PATH . 'product.php?id=' . $product['id'] . '">';
-				$data .= '<img src="' . IMAGE_PATH . $product['image'] . '" alt="' . $product['name'] . '" class="img-responsive center-block" width="160" height="160">';
+				$data .= '<img src="' . IMAGE_PATH . $product['image'] . '" alt="' . $product['name'] . '" class="img-responsive center-block p-image" width="161" height="161">';
 				$data .= '<p>' . $product['name'] . '</a><br>£ ' .  $product['price'] . '</p>';
-				$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $product['id'] . '" role="button">Add To Basket</a></div>';
+				$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $product['id'] . '" role="button"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Add To Basket</a></div>';
 				$i++;
 			}
 		}
@@ -286,9 +286,9 @@ class Products
 					$i = 0;
 				}
 				$data .= '><a href="' . SITE_PATH . 'product.php?id=' . $product['id'] . '">';
-				$data .= '<img src="' . IMAGE_PATH . $product['image'] . '" alt="' . $product['name'] . '" class="img-responsive center-block" width="160" height="160">';
+				$data .= '<img src="' . IMAGE_PATH . $product['image'] . '" alt="' . $product['name'] . '" class="img-responsive center-block p-image" width="160" height="160">';
 				$data .= '<p>' . $product['name'] . '</a><br>£ ' .  $product['price'] . '</p>';
-				$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $product['id'] . '" role="button">Add To Cart</a></div>';
+				$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $product['id'] . '" role="button"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Add To Basket</a></div>';
 				$i++;
 			}
 		}

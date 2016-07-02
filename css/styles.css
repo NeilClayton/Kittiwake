@@ -183,7 +183,7 @@ nav .fa {
   text-align: center;
 }
 .products .product .add-cart {
-  width: 158px;
+  width: 170px;
   display: block;
   margin: 0 auto;
   color: white;
@@ -193,6 +193,10 @@ nav .fa {
   border: none;
   color: white;
   padding: 10px 20px;
+  font-size: 1.6rem;
+}
+.products .product .add-cart .fa {
+  margin-right: 7px;
 }
 .products .product .add-cart:hover {
   text-decoration: none;
@@ -351,6 +355,9 @@ nav .fa {
   padding: 15px 20px;
   font-size: 1.8rem;
 }
+.details .a-button .fa {
+  margin-right: 10px;
+}
 
 /* About */
 .about-content {
@@ -424,28 +431,30 @@ nav .fa {
 }
 .cart .fa {
   margin-right: 10px;
+  font-size: 1.7rem;
 }
 .cart button, .cart .a-button {
   display: inline-block;
-  width: 190px;
+  width: 200px;
   background: #4ABDAC;
   font-family: "Playfair Display", serif;
   border: none;
   color: white;
   margin: 0 10px 0 0;
   padding: 15px 30px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 .cart .button {
   display: block;
-  width: 393px;
+  width: 413px;
   text-align: center;
   background: #4ABDAC;
   font-family: "Playfair Display", serif;
   border: none;
   color: white;
-  margin: 10px 0 0 0;
+  margin: 10px 0;
   padding: 15px 30px;
+  font-size: 1.6rem;
 }
 
 /* Contact */

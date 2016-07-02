@@ -29,7 +29,7 @@
 			<h2><?php $this->get_data('prod_name');?></h2>
 			<p><?php $this->get_data('prod_description');?></p>
 			<h5>&#163;<?php  $this->get_data('prod_price'); ?></h5>
-			<a href="cart.php?id=<?php $this->get_data('prod_id');?>" role="button" class="a-button">Add To Basket</a>
+			<a href="cart.php?id=<?php $this->get_data('prod_id');?>" role="button" class="a-button"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Add To Basket</a>
 		</div>
 	</div>
 </div>
