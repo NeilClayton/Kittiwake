@@ -14,16 +14,101 @@ if (isset($_GET['id']) && is_numeric($_GET['id']))
 	#check validity of category ID
 	if ( ! empty($category))
 	{
+		if (! isset($_GET['page']))
+			{
+				$Template->redirect(SITE_PATH . 'category.php?id=' . $_GET['id'] . '&page=1');
+			}
+			
 		#get category nav
 		$category_nav = $Categories->create_category_nav($category['name']);
 		$Template->set_data('page_nav', $category_nav);
 		
 		#get all product from that category
-		$cat_products = $Products->create_product_table(4, $_GET['id']);
+		$products = $Products->get_in_category($_GET['id']);
+		
+		if (!isset($_REQUEST['show']))
+		{
+			$products_per_page = 10;
+		}
+		else
+		{
+			extract($_REQUEST);
+			if ($_POST['items_per_page'] != 0)
+			{
+				$products_per_page = $_POST['items_per_page'];
+			}
+		}
+
+		$numbers = ($Pagination->paginate($products, $products_per_page));
+		$result = $Pagination->fetch_results();
+		$combined_data = "";
+		
+		foreach ($result as $res)
+		{
+			$prod_id = "";
+			$prod_name = "";
+			$prod_value = "";
+			
+			foreach ($res as $key => $value) 
+			{
+				
+				switch ($key) 
+				{
+					case "id";
+						$prod_id = $value;
+						break;
+					case "name":
+						$prod_name = $value;
+						break;
+					case "price":
+						$prod_value = $value;
+						break;
+					case "image":
+						$data = '<div class="product">';
+						$data .= '<img src="' . IMAGE_PATH . $value . '" alt="' . $value . '" class="img-responsive center-block" width="160" height="160">';
+						$data .= '<a href="' . SITE_PATH . 'product.php?id=' . $prod_id . '">';
+						$data .= '<p>' . $prod_name . '</a><br>£ ' . $prod_value . '</p>';
+						$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $prod_id . '" role="button">Add To Basket</a>';
+						$data .='</div>';
+						$combined_data .= $data;
+						break;
+				}
+			}
+		}
+		
+		$cat_products = $combined_data;
 		
 		if ( ! empty($cat_products))
 		{
 			$Template->set_data('products', $cat_products);
+			
+			$page_navigation = "<nav><ul class='pagination'>";
+			$cat = $_GET['id'];
+			$page= $_GET['page'];
+			$prev = $page -1;
+			$next = $page +1;
+					
+				if ($prev >= 1)
+				{
+					$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?id=' . $cat . '&page=' . $prev . '">PREV</a></li>';
+				}
+				foreach ($numbers as $num)
+				{
+					if ($page == $num)
+					{
+						$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?id=' . $cat . '&page=' . $num . '" class="active"> '. $num .' </a></li>';
+					}
+					else
+					{
+						$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?id=' . $cat . '&page=' . $num . '"> '. $num .' </a></li>';
+					}
+				}
+				if ($next <= $num)
+				{
+					$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?id=' . $cat . '&page=' . $next . '">NEXT</a></li>';
+				}				
+			echo "</ul></nav>";
+			$Template->set_data('page_navigation', $page_navigation);
 		}
 		else
 		{
@@ -37,7 +122,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id']))
 		#if categories isn't valid
 		$Template->redirect(SITE_PATH);
 	}
-	
 }
 else 
 {
@@ -60,7 +144,6 @@ else
 
 	$numbers = ($Pagination->paginate($products, $products_per_page));
 	$result = $Pagination->fetch_results();
-
 	$combined_data = "";
 	
 	foreach ($result as $res)
@@ -97,17 +180,37 @@ else
 			$Template->set_data('products', $products);
 
 			$page_navigation = "<nav><ul class='pagination'>";
-
+			if (! isset($_GET['page']))
+			{
+				$Template->redirect(SITE_PATH . 'category.php?page=1');
+			}
+			$page= $_GET['page'];
+			$prev = $page -1;
+			$next = $page +1;
+			
+			if ($prev >= 1)
+			{
+				$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?page=' . $prev. '">PREV</a><li>';
+			}	
 			foreach ($numbers as $num)
 			{
-				$page_navigation .= '
-				<li><a href="' . SITE_PATH . 'category.php?page=' . $num . '" class"######"> '. $num .' </a><li>';
+				if($page == $num)
+				{
+					$page_navigation .= '<li><a  href="' . SITE_PATH . 'category.php?page=' . $num . '" class="active"> '. $num .' </a><li>';
+				}
+				else
+				{
+					$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?page=' . $num . '"> '. $num .' </a><li>';
+				}
+			}		
+			if ($next <= $num)
+			{
+				$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?page=' . $next. '">NEXT</a><li>';
 			}
-
+			
 			echo "</ul></nav>";
 
-
-
+			
 	$Template->set_data('page_navigation', $page_navigation);
 
 	#get category nav
@@ -115,5 +218,5 @@ else
 	$Template->set_data('page_nav', $category_nav);
 
 
-	$Template->load('app/views/v_public_category.php');
+	$Template->load('app/views/v_public_category.php', 'View All');
 }
