@@ -1,7 +1,8 @@
 <?php 
 
 # Product Class (Handles all tasks related to retrieving and displaying products)
-
+	
+	
 class Products
 {
 	private $Database;
@@ -40,7 +41,7 @@ class Products
 				$items .= $item;
 			}
 			
-			if ($result = $this->Database->query("SELECT id, name, description, price, image FROM $this->db_table WHERE id IN ($items) ORDER BY name"))
+			if ($result = $this->Database->query("SELECT id, name, description, price, image FROM $this->db_table WHERE id IN ($items) ORDER BY id ASC"))
 			{
 				if ($result->num_rows > 0)
 				{
@@ -59,7 +60,7 @@ class Products
 		}
 		else if ($id != NULL)
 		{
-			# get one spesific products
+			# get one spesific product
 			if ($stmt = $this->Database->prepare("SELECT 
 			$this->db_table.id,
 			$this->db_table.name,
@@ -69,7 +70,7 @@ class Products
 			tbl_categories.name AS category_name
 			FROM $this->db_table, tbl_categories
 			WHERE $this->db_table.id = ? AND $this->db_table.category_id = 
-			tbl_categories.id"))
+			tbl_categories.id ORDER BY id"))
 			{
 				$stmt->bind_param("i", $id);
 				$stmt->execute();
@@ -87,7 +88,7 @@ class Products
 		else
 		{
 			# get a list of all products
-			if ($result = $this->Database->query("SELECT * FROM " . $this->db_table . " ORDER BY name ASC"))
+			if ($result = $this->Database->query("SELECT * FROM " . $this->db_table . " ORDER BY id ASC"))
 			{
 				if ($result->num_rows > 0)
 				{
@@ -291,27 +292,10 @@ class Products
 				$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $product['id'] . '" role="button"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Add To Basket</a></div>';
 				$i++;
 			}
+			return $data;
 		}
-		return $data;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
+	}	
 	
 	
 }
