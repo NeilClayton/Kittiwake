@@ -96,13 +96,15 @@ else
 			$products = $combined_data;
 			$Template->set_data('products', $products);
 
-			$page_navigation = "";
+			$page_navigation = "<nav><ul class='pagination'>";
 
 			foreach ($numbers as $num)
 			{
-				$page_navigation .= '<a href="' . SITE_PATH . 'category.php?page=' . $num . '" class"######"> '. $num .' </a>';
+				$page_navigation .= '
+				<li><a href="' . SITE_PATH . 'category.php?page=' . $num . '" class"######"> '. $num .' </a><li>';
 			}
 
+			echo "</ul></nav>";
 
 
 

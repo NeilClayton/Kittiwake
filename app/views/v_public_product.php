@@ -17,7 +17,7 @@
 					</div>
 					<div class="back face">
 						<p><input type="text" value="To Joe Bloggs">,</p>
-						<h3><input type="text" value="Message here"></h3>
+						<h3><textarea cols="25" rows="5">Message here</textarea></h3>
 						<h4> <input type="text" value="Love, Sarah"></h4>
 					</div>
 				</div>

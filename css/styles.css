@@ -287,20 +287,20 @@ nav .fa {
   border: 1px solid #ddd;
 }
 .l-product .back h3 {
-  margin-top: 70px;
+  margin-top: 50px;
   font-family: "Playfair Display", serif;
   text-align: center;
   font-size: 1.8rem;
 }
-.l-product .back h3 input {
+.l-product .back h3 textarea {
   width: 250px;
-  text-align: center;
+  resize: none;
   border: 1px solid #ddd;
 }
 .l-product .back h4 {
   font-family: "Jacques Francois", serif;
   font-size: 1.7rem;
-  margin: 70px 0 20px 20px;
+  margin: 50px 0 20px 20px;
 }
 .l-product .back h4 input {
   width: 180px;
@@ -357,6 +357,64 @@ nav .fa {
 }
 .details .a-button .fa {
   margin-right: 10px;
+}
+
+.pagnav {
+  background: white;
+  padding-bottom: 50px;
+}
+.pagnav ul.pagination {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  font-family: arial, sans-serif;
+  float: right;
+  margin: 0 200px 0 0;
+  padding: 0;
+}
+.pagnav ul.pagination > li {
+  display: inline-block;
+  margin-right: 2px;
+}
+.pagnav ul.pagination > li:first-child > a, .pagnav ul.pagination > li:first-child .pagination > li:first-child > span {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+.pagnav ul.pagination > li > a, .pagnav ul.pagination > li .pagination > li > span {
+  background: transparent;
+  border: 1px solid white;
+  background: #4ABDAC;
+  color: white;
+  height: 42px;
+  width: 42px;
+  text-align: center;
+  padding: 10px;
+}
+.pagnav form {
+  margin-left: 40px;
+}
+.pagnav form select {
+  height: 42px;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  border: none;
+}
+.pagnav form button {
+  height: 42px;
+  background: #4ABDAC;
+  color: white;
+  border: none;
+  padding: 10px 50px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  margin-left: 20px;
 }
 
 /* About */
@@ -557,14 +615,14 @@ nav .fa {
 
 footer {
   background: #4ABDAC;
-  padding: 30px 0;
+  padding: 30px 0 0 0;
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
 }
 footer ul {
   list-style-type: none;
 }
 footer ul li a {
-  font-family: "Jacques Francois", serif;
-  font-size: 1.7rem;
   color: white;
   padding: 0;
 }
@@ -588,6 +646,28 @@ footer p {
   font-size: 1.7rem;
   text-align: center;
   color: white;
+}
+footer .wwb {
+  margin-top: 30px;
+  font-size: 1.3rem;
+  text-align: center;
+  color: white;
+  background: #1a8e7d;
+  padding: 5px 0;
+}
+footer .wwb ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+footer .wwb ul li {
+  display: inline-block;
+  padding: 0 6px;
+}
+footer .no-gutter {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @media all and (max-width: 1024px) {
