@@ -70,8 +70,6 @@ class User
 		{    
 	        return $_SESSION['login'];
 	    }
-		
-
 	    public function user_logout() 
 		{
 	        $_SESSION['login'] = FALSE;
