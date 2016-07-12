@@ -16,14 +16,14 @@
 		<div class="row pagnav">
 			<div class="col-md-6 col-md-offset-1">
 				<form action="#" method="post" name="items_on_page">
-					<select name="items_per_page">
-						<option>Show items per page</option>
+					<select name="items_per_page" id="select_cat">
+						<option selected disabled>Show items per page</option>
 						<option value="5">5</option>
 						<option value="10">10</option>
 						<option value="15">15</option>
 						<option value="20">20</option>
 					</select>
-					<button type="submit" name="show">Update</button>
+					<button type="submit" name="show" id="update_cat" disabled>Update</button>
 				</form>
 			</div>
 			<div class="col-md-4">

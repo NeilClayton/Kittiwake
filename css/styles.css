@@ -384,14 +384,20 @@ nav .fa {
   border-radius: 0;
 }
 .pagnav ul.pagination > li > a, .pagnav ul.pagination > li .pagination > li > span {
+  display: block;
   background: transparent;
-  border: 1px solid white;
-  background: #4ABDAC;
-  color: white;
+  border: 1px solid #4ABDAC;
+  color: #4ABDAC;
+  text-align: center;
   height: 42px;
   width: 42px;
-  text-align: center;
-  padding: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 28px;
+}
+.pagnav ul.pagination > li a.active {
+  background: #4ABDAC;
+  color: white;
 }
 .pagnav form {
   margin-left: 40px;
@@ -406,7 +412,10 @@ nav .fa {
   border-radius: 0;
   border: none;
 }
-.pagnav form button {
+.pagnav form select:focus {
+  outline: none;
+}
+.pagnav form #update_cat {
   height: 42px;
   background: #4ABDAC;
   color: white;

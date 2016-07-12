@@ -90,7 +90,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id']))
 					
 				if ($prev >= 1)
 				{
-					$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?id=' . $cat . '&page=' . $prev . '">PREV</a></li>';
+					$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?id=' . $cat . '&page=' . $prev . '">&#8592;</a></li>';
 				}
 				foreach ($numbers as $num)
 				{
@@ -105,7 +105,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id']))
 				}
 				if ($next <= $num)
 				{
-					$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?id=' . $cat . '&page=' . $next . '">NEXT</a></li>';
+					$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?id=' . $cat . '&page=' . $next . '">&#8594;</a></li>';
 				}				
 			echo "</ul></nav>";
 			$Template->set_data('page_navigation', $page_navigation);
@@ -190,7 +190,7 @@ else
 			
 			if ($prev >= 1)
 			{
-				$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?page=' . $prev. '">PREV</a><li>';
+				$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?page=' . $prev. '">&#8592;</a><li>';
 			}	
 			foreach ($numbers as $num)
 			{
@@ -205,7 +205,7 @@ else
 			}		
 			if ($next <= $num)
 			{
-				$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?page=' . $next. '">NEXT</a><li>';
+				$page_navigation .= '<li><a href="' . SITE_PATH . 'category.php?page=' . $next. '">&#8594;</a><li>';
 			}
 			
 			echo "</ul></nav>";
