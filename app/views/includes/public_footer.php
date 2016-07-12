@@ -45,9 +45,9 @@
 							</ul>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</footer>
+		<script src="js/update.js"></script>
 	</body>
 </html>
