@@ -12,6 +12,7 @@ class User
 		global $Database;
 		$this->Database = $Database;
 	}
+
 	
 		public function reg_user($name,$username,$password,$email)
 		{
@@ -39,7 +40,7 @@ class User
 		{
         	
         	$password = md5($password);
-			$sql2="SELECT uid FROM $this->db_table WHERE uemail='$emailusername' OR uname='$emailusername' and upass='$password'";
+			$sql2="SELECT uid FROM $this->db_table WHERE uname='$emailusername' and upass='$password' OR uemail='$emailusername' and upass='$password'";
 			
 			#checking if the username is available in the table
         	$result = mysqli_query($this->Database,$sql2);

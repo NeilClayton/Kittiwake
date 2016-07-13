@@ -9,14 +9,15 @@ $Template->set_data('page_class', 'login');
 	    $login = $User->check_login($emailusername, $password);
 	    if ($login) 
 		{
+			$name = $User->get_fullname($_SESSION['login']);
 	        # Login Success
-			$Template->set_alert('Welcome back');
+			$Template->set_alert('<p class="text-success">Welcome back</p>');
 			$Template->redirect(SITE_PATH . 'cart.php');
 	    } 
 		else 
 		{
 	        # Login Failed
-			$Template->set_alert('Sorry you have entered incorrect login details please try again');
+			$Template->set_alert('<p class="text-danger">Sorry you have entered incorrect login details please try again</p>');
 	    }
 	}
 	if (isset($_GET['q']))

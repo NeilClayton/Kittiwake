@@ -114,7 +114,7 @@ class Template
 			{
 				foreach($_SESSION[$alert] as $value)
 				{
-					$data .= '<li class="' . $alert . '">' . $value . '</li>';
+					$data .= '<p class="' . $alert . '">' . $value . '</p>';
 				}
 				unset($_SESSION[$alert]);
 			}
