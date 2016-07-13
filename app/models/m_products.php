@@ -133,7 +133,7 @@ class Products
 	public function get_in_category($id)
 	{
 		$data = array();
-		if ($stmt = $this->Database->prepare("SELECT id, name, price, image FROM " . $this->db_table . " WHERE category_id = ? ORDER BY name"))
+		if ($stmt = $this->Database->prepare("SELECT id, name, price, image FROM " . $this->db_table . " WHERE category_id = ? ORDER BY id"))
 		{
 			$stmt->bind_param("i", $id);
 			$stmt->execute();
@@ -177,7 +177,7 @@ class Products
 		}
 		
 		#get multiple product info based on their ids
-		if ($result = $this->Database->query("SELECT id, price FROM $this->db_table WHERE id IN ($items) ORDER BY name"))
+		if ($result = $this->Database->query("SELECT id, price FROM $this->db_table WHERE id IN ($items) ORDER BY id"))
 		{
 			if ($result->num_rows > 0)
 			{
