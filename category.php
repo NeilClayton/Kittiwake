@@ -68,7 +68,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id']))
 						$data .= '<img src="' . IMAGE_PATH . $value . '" alt="' . $value . '" class="img-responsive center-block" width="160" height="160">';
 						$data .= '<a href="' . SITE_PATH . 'product.php?id=' . $prod_id . '">';
 						$data .= '<p>' . $prod_name . '</a><br>£ ' . $prod_value . '</p>';
-						$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $prod_id . '" role="button">Add To Basket</a>';
+						$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $prod_id . '" role="button"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Add To Basket</a>';
 						$data .='</div>';
 						$combined_data .= $data;
 						break;
@@ -169,7 +169,7 @@ else
 					$data .= '<img src="' . IMAGE_PATH . $value . '" alt="' . $value . '" class="img-responsive center-block" width="160" height="160">';
 					$data .= '<a href="' . SITE_PATH . 'product.php?id=' . $prod_id . '">';
 					$data .= '<p>' . $prod_name . '</a><br>£ ' . $prod_value . '</p>';
-					$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $prod_id . '" role="button">Add To Basket</a>';
+					$data .= '<a class="add-cart" href="' . SITE_PATH . 'cart.php?id=' . $prod_id . '" role="button"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Add To Basket</a>';
 					$data .='</div>';
 					$combined_data .= $data;
 					break;

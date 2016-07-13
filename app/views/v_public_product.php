@@ -32,5 +32,11 @@
 			<a href="cart.php?id=<?php $this->get_data('prod_id');?>" role="button" class="a-button"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Add To Basket</a>
 		</div>
 	</div>
+	<div class="row products">
+			<div class="col-md-10 col-md-offset-1">
+				<h2>A few other products of ours</h2>
+				<?php $this->get_data('products');?>
+			</div>
+		</div>
 </div>
 <?php include("includes/public_footer.php"); ?>

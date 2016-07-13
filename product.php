@@ -19,6 +19,10 @@ if (isset($_GET['id']) && is_numeric($_GET['id']))
 		$Template->set_data('prod_price', $product['price']);
 		$Template->set_data('prod_image', IMAGE_PATH . $product['image']);
 		
+		#show other products
+		$products = $Products->create_five_product_table();
+		$Template->set_data('products', $products);
+		
 		#create category nav
 		$category_nav = $Categories->create_category_nav($product['category_name']);
 		$Template->set_data('page_nav', $category_nav);

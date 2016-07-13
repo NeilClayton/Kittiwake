@@ -18,7 +18,7 @@
 					<ul class="cart"><?php $this->get_data('cart_rows');?>
 					</ul>
 					<div class="buttons">
-						<a role="button" class="button" href="products.php"><i class="fa fa-shopping-basket"></i>Continue Shopping</a>
+						<a role="button" class="button" href="category.php"><i class="fa fa-shopping-basket"></i>Continue Shopping</a>
 						<a role="button" class="a-button" href="?empty"><i class="fa fa-shopping-basket"></i>Empty Basket</a>
 						<button type="submit" name="update"><i class="fa fa-shopping-basket"></i>Update Basket</button>
 					</div>
