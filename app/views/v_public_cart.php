@@ -31,7 +31,26 @@
 				else
 				{
 				?>
-				<form action="#" method="post" class="checkout">
+				<form action="<?php echo SHOP_SUBMIT_URL; ?>" method="post" class="checkout">
+					<input type="hidden" name="cmd" value="_cart">
+					<input type="hidden" name="business" value="<?php echo SHOP_BUSINESS; ?>">
+					<input type="hidden" name="lc" value="GB">
+					<input type="hidden" name="currency_code" value="GBP">
+					<input type="hidden" name="button_subtype" value="products">
+					<input type="hidden" name="no_note" value="1">
+					<input type="hidden" name="no_shipping" value="2">
+					<input type="hidden" name="rm" value="1">
+					<input type="hidden" name="upload" value="1">
+					
+					<input type="hidden" name="return" value="<?php echo SHOP_SUCCESS_URL; ?>">
+					<input type="hidden" name="cancel_return" value="<?php echo SHOP_CANCEL_URL; ?>">
+					<input type="hidden" name="notify_url" value="<?php echo SHOP_NOTIFY; ?>"">
+					
+					<?php $this->get_data('cart_paypal');?>
+					
+					<img alt="" border="0" src="<?php echo SHOP_PIXEL; ?>" width="1" height="1">
+					
+
 					<button type="submit" name="submit" class="button"><i class="fa fa-shopping-paypal"></i>Pay with PayPal</button>
 				</form>
 				<?php

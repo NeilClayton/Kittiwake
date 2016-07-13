@@ -188,7 +188,7 @@ class Cart
 		{
 			return 2.00;
 		}
-		else if ($total > 50)
+		else if ($total < 50)
 		{
 			return 0.00;
 		}
@@ -201,7 +201,7 @@ class Cart
 	*
 	*@access - public
 	*@param  
-	*@return - string
+	*@return - array
 	*/
 	public function create_cart()
 	{
@@ -209,6 +209,7 @@ class Cart
 		$products = $this->get();
 		
 		$data = '';
+		$form = '';
 		$total = 0;
 
 		if ($products != '')
@@ -219,11 +220,18 @@ class Cart
 
 			foreach($products as $product)
 			{
+				$item_shipping = $this->get_shipping_cost($product['price']) * $_SESSION['cart'][$product['id']];
+				$shipping += $item_shipping;
+				
 				$data .= '<li><b class="tab-head">Product Name:</b>' . "<b class='tab-detail'>"  . $product['name'] . '</b></li>';
 				$data .= '<li><b class="tab-head">Quantity:</b><b class="tab-detail"><input name="product' . $product['id'] . '" value="' . $_SESSION['cart'][$product['id']] .'"></b></li>';
 				$data .= '<li><b class="tab-head">Product Price:</b><b class="tab-detail">&#163;' . $product['price'] . '</b></li><br>';
 
-				$shipping += ($this->get_shipping_cost($product['price']) * $_SESSION['cart'][$product['id']]);
+				//Create paypal form fields
+				$form .= '<input type="hidden" name="item_name_' . $line . '" value="' . $product['name'] . '">';
+				$form .= '<input type="hidden" name="amount_' . $line . '" value="' . number_format($product['price'], 2) . '">';
+				$form .= '<input type="hidden" name="quantity_' . $line . '" value="' . $_SESSION['cart'][$product['id']] . '">';
+				$form .= '<input type="hidden" name="shipping_' . $line . '" value="' . $item_shipping . '">';
 
 				$total += $product['price'] * $_SESSION['cart'][$product['id']];
 				$line++;
@@ -241,7 +249,7 @@ class Cart
 			}
 
 			#add total row
-			$data .= '<br><li><b class="tab-head">Total:</b><b class="tab-detail">&#163;' . $total . '</li></b>';
+			$data .= '<br><li><b class="tab-head">Total:</b><b class="tab-detail">&#163;' . number_format((SHOP_TAX *  $total) + $total + $shipping, 2) . '</li></b>';
 		}
 		else
 		{
@@ -264,9 +272,8 @@ class Cart
 			#add total row
 			$data .= '<br><li><b class="tab-head">Total:</b><b class="tab-detail">&#163;0.00</b></li>';
 		}
-		
-		
-		
-		return $data;
+		//set PayPal tax rate 
+		$form .= '<input type="hidden" name="tax_cart" value="' . number_format(SHOP_TAX * $total, 2).'">';
+		return array($data, $form);
 	}
 }
