@@ -108,6 +108,43 @@ nav .fa {
   margin-left: 10px;
 }
 
+ul.pagination {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  font-family: arial, sans-serif;
+  float: right;
+  margin: 0 200px 0 0;
+  padding: 0;
+}
+ul.pagination > li {
+  display: inline-block;
+  margin-right: 2px;
+}
+ul.pagination > li:first-child > a, ul.pagination > li:first-child .pagination > li:first-child > span {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+ul.pagination > li > a, ul.pagination > li .pagination > li > span {
+  display: block;
+  background: transparent;
+  border: 1px solid #4ABDAC;
+  color: #4ABDAC;
+  text-align: center;
+  height: 42px;
+  width: 42px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 28px;
+}
+ul.pagination > li a.active {
+  background: #4ABDAC;
+  color: white;
+}
+
 /* Home */
 .intro {
   padding: 50px 0;
@@ -363,42 +400,6 @@ nav .fa {
   background: white;
   padding-bottom: 50px;
 }
-.pagnav ul.pagination {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  border-radius: 0;
-  font-family: arial, sans-serif;
-  float: right;
-  margin: 0 200px 0 0;
-  padding: 0;
-}
-.pagnav ul.pagination > li {
-  display: inline-block;
-  margin-right: 2px;
-}
-.pagnav ul.pagination > li:first-child > a, .pagnav ul.pagination > li:first-child .pagination > li:first-child > span {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  border-radius: 0;
-}
-.pagnav ul.pagination > li > a, .pagnav ul.pagination > li .pagination > li > span {
-  display: block;
-  background: transparent;
-  border: 1px solid #4ABDAC;
-  color: #4ABDAC;
-  text-align: center;
-  height: 42px;
-  width: 42px;
-  font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 28px;
-}
-.pagnav ul.pagination > li a.active {
-  background: #4ABDAC;
-  color: white;
-}
 .pagnav form {
   margin-left: 40px;
 }
@@ -620,6 +621,100 @@ nav .fa {
 }
 #login form a {
   color: #4ABDAC;
+}
+
+/* Success */
+.thankyou {
+  padding: 50px 0;
+  background: white;
+  border-bottom: 1px solid #f1f1f1;
+}
+.thankyou h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  text-align: center;
+}
+.thankyou .icons {
+  margin: 0 auto;
+  width: 303px;
+}
+.thankyou .icons .icon {
+  margin: 30px 0 0 0;
+  display: inline-block;
+  width: 85px;
+  height: 85px;
+  text-align: center;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  color: white;
+  -moz-transition: background 0.5s linear 0s, color 0.5s linear 0s;
+  -webkit-transition: background 0.5s linear 0s, color 0.5s linear 0s;
+  -o-transition: background 0.5s linear 0s, color 0.5s linear 0s;
+  -ms-transition: background 0.5s linear 0s, color 0.5s linear 0s;
+  transition: background 0.5s linear 0s, color 0.5s linear 0s;
+}
+.thankyou .icons .icon.facebook {
+  background: #3B5998;
+  border: 2px solid #3B5998;
+}
+.thankyou .icons .icon.facebook:hover {
+  background: white;
+  color: #3B5998;
+}
+.thankyou .icons .icon.twitter {
+  background: #00ABF1;
+  border: 2px solid #00ABF1;
+  margin-left: 20px;
+}
+.thankyou .icons .icon.twitter:hover {
+  background: white;
+  color: #00ABF1;
+}
+.thankyou .icons .icon.youtube {
+  background: #E62117;
+  border: 2px solid #E62117;
+  margin-left: 20px;
+}
+.thankyou .icons .icon.youtube:hover {
+  background: white;
+  color: #E62117;
+}
+.thankyou .icons .icon .fa {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 4rem;
+}
+
+.s-contact {
+  padding: 50px 0;
+  background: #f1f1f1;
+}
+.s-contact h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  text-align: center;
+}
+.s-contact p {
+  font-family: "Jacques Francois", serif;
+  font-size: 1.7rem;
+  text-align: center;
+  margin-top: 30px;
+}
+.s-contact a {
+  width: 170px;
+  display: block;
+  margin: 30px auto 0 auto;
+  color: white;
+  text-align: center;
+  background: #4ABDAC;
+  font-family: "Playfair Display", serif;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.6rem;
 }
 
 footer {

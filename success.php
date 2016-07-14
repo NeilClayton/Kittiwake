@@ -11,4 +11,7 @@ $Template->set_data('cart_total_cost', 0.00);
 $category_nav = $Categories->create_category_nav('');
 $Template->set_data('page_nav', $category_nav);
 
+$products = $Products->create_five_product_table();
+$Template->set_data('products', $products);
+
 $Template->load('app/views/v_public_success.php', 'Thanks!');
