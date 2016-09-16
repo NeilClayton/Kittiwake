@@ -285,6 +285,50 @@ ul.pagination > li a.active {
   margin: 0 7px;
 }
 
+@media only screen and (max-width: 769px) {
+  .products h2 {
+    margin-left: 0;
+    text-align: center;
+  }
+  .products .product {
+    float: left;
+    margin: 25px 0 35px 10%;
+  }
+
+  .our-promise {
+    padding: 50px 0;
+    background: #f7f7f7;
+  }
+  .our-promise h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.8rem;
+    margin: 0 0 50px 0;
+    color: #333;
+  }
+  .our-promise h3 {
+    margin: 0 0 20px 0;
+    font-family: "Playfair Display", serif;
+    font-size: 2.2rem;
+    color: #dd8609;
+  }
+  .our-promise p {
+    display: block;
+    margin: 10px auto 0 auto;
+    width: 75%;
+    font-family: "Jacques Francois", serif;
+    font-size: 1.7rem;
+  }
+
+  .our-promise {
+    padding: 50px 0;
+  }
+  .our-promise h3 {
+    margin: 20px 0;
+    font-family: "Playfair Display", serif;
+    font-size: 2.2rem;
+    color: #dd8609;
+  }
+}
 /* Product */
 .l-product .card {
   width: 290px;
@@ -781,5 +825,50 @@ footer .no-gutter {
 
   #login form {
     width: 50%;
+  }
+}
+@media all and (max-width: 769px) {
+  .top-nav ul {
+    margin: 10px 0 0 0;
+    padding: 0;
+    float: none !important;
+    text-align: center;
+  }
+  .top-nav ul .sign-in {
+    display: none;
+  }
+  .top-nav ul li {
+    display: inline-block;
+    padding: 0;
+  }
+  .top-nav ul li input[type=search] {
+    display: none;
+  }
+  .top-nav ul li .fa-search {
+    display: none;
+  }
+  .top-nav header {
+    padding: 10px 0;
+  }
+  .top-nav header h2 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    margin: 0;
+    font-size: 5rem;
+    font-size: 3.5rem;
+    margin: 0;
+  }
+
+  footer ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  footer p {
+    margin-top: 30px;
+    font-family: "Jacques Francois", serif;
+    font-size: 1.7rem;
+    text-align: center;
+    color: white;
   }
 }

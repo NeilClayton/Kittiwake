@@ -20,11 +20,11 @@
 				<?php
 				if (isset($_SESSION['login']))
 				{
-					echo '<a href="login.php?q=logout"><i class="fa fa-user" aria-hidden="true"></i>Log out</a>';
+					echo '<a class="sign-in" href="login.php?q=logout"><i class="fa fa-user" aria-hidden="true"></i>Log out</a>';
 				}
 				else
 				{
-					echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i>Sign in</a>';
+					echo '<a class="sign-in" href="login.php"><i class="fa fa-user" aria-hidden="true"></i>Sign in</a>';
 				}
 				?>
 				<?php
