@@ -78,6 +78,9 @@ body {
   font-family: "Jacques Francois", serif;
   font-size: 1.8rem;
 }
+.navbar-default .navbar-nav > .nav-account {
+  display: none;
+}
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
   background: white;
   color: #333;
@@ -327,6 +330,45 @@ ul.pagination > li a.active {
     font-family: "Playfair Display", serif;
     font-size: 2.2rem;
     color: #dd8609;
+  }
+}
+@media only screen and (max-width: 736px) {
+  .products .product {
+    margin-left: 9%;
+  }
+}
+@media only screen and (max-width: 667px) {
+  .products .product {
+    margin-left: 7%;
+  }
+}
+@media only screen and (max-width: 568px) {
+  .products .product {
+    margin-left: 1.5%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .intro h1 {
+    font-size: 3rem;
+  }
+
+  .products .product {
+    margin-left: 22.5%;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .products .product {
+    margin-left: 17.5%;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .products .product {
+    margin-left: 13.5%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .products .product {
+    margin-left: 7%;
   }
 }
 /* Product */
@@ -827,7 +869,21 @@ footer .no-gutter {
     width: 50%;
   }
 }
-@media all and (max-width: 769px) {
+@media only screen and (max-width: 769px) {
+  footer ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  footer p {
+    margin-top: 30px;
+    font-family: "Jacques Francois", serif;
+    font-size: 1.7rem;
+    text-align: center;
+    color: white;
+  }
+}
+@media only screen and (max-width: 568px) {
   .top-nav ul {
     margin: 10px 0 0 0;
     padding: 0;
@@ -859,16 +915,7 @@ footer .no-gutter {
     margin: 0;
   }
 
-  footer ul {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  footer p {
-    margin-top: 30px;
-    font-family: "Jacques Francois", serif;
-    font-size: 1.7rem;
-    text-align: center;
-    color: white;
+  .navbar-default .navbar-nav > .nav-account {
+    display: inline-block;
   }
 }

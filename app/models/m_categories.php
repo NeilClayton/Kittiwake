@@ -114,8 +114,16 @@ class Categories
 									}
 									$data .= '</ul></li>
 									<li><a href="about.php">About</a></li>
-									<li><a href="contact.php">Contact</a></li>
-						</ul>
+									<li><a href="contact.php">Contact</a></li>';
+									if (isset($_SESSION['login']))
+									{
+										$data .= '<li class="nav-account"><a href="login.php?q=logout"><i class="fa fa-user" aria-hidden="true"></i>Log out</a></li>';
+									}
+									else
+									{
+										$data .= '<li class="nav-account"><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i>Sign in</a></li>';
+									}
+						$data .= '</ul>
 					</div>
 					</div>
 				</nav>';
