@@ -3,7 +3,6 @@
 	<ul class="alerts">
 		<?php $this->get_alerts();?> 
 	</ul>
-
 	<div class="container-fluid">
 		<div class="row intro">
 			<div class="col-md-10 col-md-offset-1">
