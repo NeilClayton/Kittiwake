@@ -358,12 +358,12 @@ ul.pagination > li a.active {
 }
 @media only screen and (max-width: 414px) {
   .products .product {
-    margin-left: 17.5%;
+    margin-left: 16%;
   }
 }
 @media only screen and (max-width: 375px) {
   .products .product {
-    margin-left: 13.5%;
+    margin-left: 13%;
   }
 }
 @media only screen and (max-width: 320px) {
@@ -513,6 +513,26 @@ ul.pagination > li a.active {
   margin-left: 20px;
 }
 
+@media only screen and (max-width: 768px) {
+  .pagnav {
+    text-align: center;
+  }
+  .pagnav form {
+    margin-left: 0;
+  }
+  .pagnav form #update_cat {
+    height: 42px;
+    padding: 10px 50px;
+    margin-left: 20px;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .pagnav form #update_cat {
+    width: 90%;
+    margin: 20px 0 0 0;
+    padding: 10px 0;
+  }
+}
 /* About */
 .about-content {
   padding: 50px 0;
@@ -611,6 +631,54 @@ ul.pagination > li a.active {
   font-size: 1.6rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .cart ul {
+    margin: 0 0 0 20%;
+    width: 60%;
+  }
+  .cart button, .cart .a-button {
+    display: block;
+    width: 60%;
+    margin: 10px 0 0 20%;
+    text-align: center;
+    padding: 15px 0;
+  }
+  .cart .button {
+    display: block;
+    width: 60%;
+    text-align: center;
+    margin: 10px 0 0 20%;
+    padding: 15px 0;
+  }
+}
+@media only screen and (max-width: 568px) {
+  .cart ul {
+    margin: 0 0 0 10%;
+    width: 80%;
+  }
+  .cart button, .cart .a-button {
+    width: 80%;
+    margin: 10px 0 0 10%;
+  }
+  .cart .button {
+    width: 80%;
+    margin: 10px 0 0 10%;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .cart ul {
+    margin: 0;
+    width: 100%;
+  }
+  .cart button, .cart .a-button {
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+  .cart .button {
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+}
 /* Contact */
 .contact {
   background: white;
@@ -709,6 +777,64 @@ ul.pagination > li a.active {
   color: #4ABDAC;
 }
 
+@media only screen and (max-width: 1367px) {
+  #login form {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 769px) {
+  #login form {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 736px) {
+  #login form {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 568px) {
+  #login form {
+    width: 100%;
+  }
+  #login form input {
+    height: 45px;
+  }
+  #login form button {
+    height: 45px;
+  }
+}
+@media only screen and (max-width: 415px) {
+  #login form {
+    height: 100vh;
+  }
+  #login form h2 {
+    margin-top: 140px;
+  }
+  #login form input {
+    height: 60px;
+  }
+  #login form button {
+    height: 60px;
+  }
+}
+@media only screen and (max-width: 376px) {
+  #login form {
+    padding: 20px;
+  }
+  #login form h2 {
+    margin-top: 120px;
+  }
+}
+@media only screen and (max-width: 320px) and (max-height: 568px) {
+  #login form h2 {
+    margin-top: 90px;
+  }
+}
+@media only screen and (max-width: 320px) and (max-height: 480px) {
+  #login form h2 {
+    margin-top: 50px;
+  }
+}
 /* Success */
 .thankyou {
   padding: 50px 0;
@@ -860,16 +986,45 @@ footer .no-gutter {
   padding-right: 0;
 }
 
-@media all and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .navbar-default .navbar-nav > li > a {
     padding: 25px 40px;
   }
-
-  #login form {
-    width: 50%;
-  }
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 768px) {
+  ul.pagination {
+    display: inline-block;
+    margin: 30px auto 0 auto;
+    float: none;
+    text-align: center;
+  }
+  ul.pagination > li {
+    display: inline-block;
+    margin-right: 2px;
+  }
+  ul.pagination > li:first-child > a, ul.pagination > li:first-child .pagination > li:first-child > span {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+  }
+  ul.pagination > li > a, ul.pagination > li .pagination > li > span {
+    display: block;
+    background: transparent;
+    border: 1px solid #4ABDAC;
+    color: #4ABDAC;
+    text-align: center;
+    height: 42px;
+    width: 42px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 28px;
+  }
+  ul.pagination > li a.active {
+    background: #4ABDAC;
+    color: white;
+  }
+
   footer ul {
     text-align: center;
     margin: 0;
